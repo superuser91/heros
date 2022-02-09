@@ -1,0 +1,1 @@
+{"version":1,"defects":{"Vgplay\\Heros\\Tests\\Unit\\UnitTest::testCreateHero":3},"times":{"Vgplay\\Heros\\Tests\\Feature\\ExampleTest::testMigrate":0.056,"Vgplay\\Heros\\Tests\\Unit\\UnitTest::testCreateHero":0.06,"Vgplay\\Heros\\Tests\\Feature\\FeatureTest::testMigrate":0.003}}

@@ -1,0 +1,40 @@
+{
+    "name": "vgplay/heros",
+    "description": "Game's characters",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dung199551",
+            "email": "dung199551@gmail.com"
+        }
+    ],
+    "require": {
+        "laravel/framework": "^6|^7|^8",
+        "vgplay/contracts": "^1.1",
+        "vgplay/laravel-redis-model": "^1",
+        "orchestra/testbench": "^6.24"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vgplay\\Heros\\": "src/",
+            "Vgplay\\Heros\\Database\\Factories\\": "database/factories/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vgplay\\Heros\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vgplay\\Heros\\HerosServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}
