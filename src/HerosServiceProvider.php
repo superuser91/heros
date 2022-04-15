@@ -3,6 +3,7 @@
 namespace Vgplay\Heros;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Vgplay\Heros\Models\Hero;
 use Vgplay\Heros\Models\Clan;
 
 class HerosServiceProvider extends ServiceProvider
