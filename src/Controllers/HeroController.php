@@ -25,7 +25,7 @@ class HeroController
 
     public function create()
     {
-        $this->authorize('create', Post::class);
+        $this->authorize('create', Hero::class);
 
         $clans = Clan::fromCache()->all();
 
