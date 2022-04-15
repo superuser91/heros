@@ -150,9 +150,16 @@
 
             <div class="form-group mt-4">
                 <button class="btn btn-success">Lưu lại</button>
+                <a data-action="{{ route('heros.destroy', $hero->id) }}" class="btn btn-danger btn-delete float-right">
+                    <i class="fas fa-trash"></i>
+                    Xoá</a>
             </div>
         </form>
     </div>
+    <form method="POST" id="form-delete">
+        @csrf
+        @method('DELETE')
+    </form>
     <p class="d-none" id="skill-template" value="{{ $skillTemplate }}"></p>
 @endsection
 
@@ -171,5 +178,24 @@
         $(document).on('click', '.btn-delete-skill', function() {
             $(this).closest('.skill').remove();
         })
+
+        $(document).on('click', '.btn-delete', function(e) {
+            e.preventDefault();
+            let action = $(this).data('action');
+            Swal.fire({
+                title: 'Bạn có chắc chắn muốn xoá?',
+                text: "Sau khi xoá sẽ không thể phục hồi lại!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Xoá!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $('#form-delete').attr('action', action);
+                    $('#form-delete').submit();
+                }
+            })
+        });
     </script>
 @endpush
